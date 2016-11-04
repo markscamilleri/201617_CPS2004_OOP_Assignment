@@ -1,4 +1,6 @@
 language: java
 
 script: 
-    - javac -classpath dist/tttwar_v1.0.jar src/*/*.java
+    - javac -d dist/ -classpath dependencies/tttwar_v1.0.jar -classpath dependencies/junit-4.12.jar -classpath dependencies/hamcrest-core-1.3.jar src/*/*.java
+    - java -cp dist:depenedencies/junit-4.12.jar:depenedencies/hamvrest-core-1.3.jar org.junit.runner.JUnitCore EngineTests
+
