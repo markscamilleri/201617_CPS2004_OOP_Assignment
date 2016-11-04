@@ -9,7 +9,7 @@ Miguel Dingli       | Player  | @Miguel206
 Ella Lautier        | Player  | @ellalautier
 
 ## Coding
-Firstly, to create the project on your chosen IDE, remember to use "Create project with existing sources". That way, you can select this repository to be where your sources are located. Source code will go in the `src` folder, whereas the compiled code will go in the `dist` folder.
+Firstly, to create the project on your chosen IDE, remember to use "Create project with existing sources". That way, you can select this repository to be where your sources are located. Source code will go in the `src` folder, whereas the compiled code will go in the `dist` folder. Code pertaining to unit tests should go to the `test` folder.
 
 Javadocs are there for a reason, they can produce very pretty documentation pages :smiley:
 
