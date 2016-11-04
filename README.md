@@ -8,6 +8,11 @@ Mark Said Camilleri | Engine  | @markscamilleri
 Miguel Dingli       | Player  | @Miguel206
 Ella Lautier        | Player  | @ellalautier
 
+## Coding
+Firstly, to create the project on your chosen IDE, remember to use "Create project with existing sources". That way, you can select this repository to be where your sources are located. Source code will go in the `src` folder, whereas the compiled code will go in the `dist` folder.
+
+Javadocs are there for a reason, they can produce very pretty documentation pages :smiley:
+
 ## Code Formatting
 One of the best ways to write clean code is by making sure that your code adhers to a specific format. Google has made available their own code style formatting avaialable for anyone to use (https://github.com/google/google-java-format). Apart from this, IntelliJ (and I believe also, Eclipse) have got this plugin called SonarLint which would alert you whenever your code does not adher to the style you choose. 
 
