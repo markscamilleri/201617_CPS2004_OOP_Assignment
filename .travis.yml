@@ -1,0 +1,3 @@
+language: java
+
+script: bundle exec javac -classpath dist/tttwar_v1.0.jar src/*.java
