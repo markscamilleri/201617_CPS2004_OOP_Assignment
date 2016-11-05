@@ -1,8 +1,11 @@
 package engine;
 
+import edu.um.cps2004.task1.catalog.Mark;
+import edu.um.cps2004.task1.engine.GameBoard;
+import edu.um.cps2004.task1.engine.TTTWarEngine;
 import edu.um.cps2004.task1.robot.TTTRobot;
+import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 
 import static junit.framework.TestCase.assertNotNull;
 
@@ -12,26 +15,30 @@ import static junit.framework.TestCase.assertNotNull;
  */
 public class GameEngineTest {
 
-    /**
-     * This robot is being mocked. As a result, we do not need to
-     * instantiate it. Mocked objects are useful if we do not care
-     * about them for the purpose of testing another class.
-     *
-     * To mock an object, use the @Mock annotation.
-     */
-    @Mock
-    TTTRobot RobotO;
 
-    /**
-     * This robot is being mocked. As a result, we do not need to
-     * instantiate it. Mocked objects are useful if we do not care
-     * about them for the purpose of testing another class.
-     *
-     * To mock an object, use the @Mock annotation.
-     */
-    @Mock
-    TTTRobot RobotX;
+    //A dummy implementation of TTTRobot
+    class Robot implements TTTRobot{
 
+        @Override
+        public String getRobotMasterName() {
+            return "Hello";
+        }
+
+        @Override
+        public int play(GameBoard gameBoard, Mark mark) {
+            return 0;
+        }
+    }
+
+    TTTWarEngine engine;
+
+    TTTRobot robotO = new Robot();
+    TTTRobot robotX = new Robot();
+
+    @Before
+    public void initialize() {
+        engine = new GameEngine(robotO, robotX);
+    }
 
     /**
      * This is a test to be run in the test suite. The whole class is
@@ -39,6 +46,6 @@ public class GameEngineTest {
      */
     @Test
     public void testGameBoardIsCreated(){
-        assertNotNull("The Game has not been created", new GameEngine(RobotO, RobotX));
+        assertNotNull("The Game has not been created", engine);
     }
 }

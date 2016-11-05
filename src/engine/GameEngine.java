@@ -10,8 +10,8 @@ import edu.um.cps2004.task1.robot.TTTRobot;
 public class GameEngine extends TTTWarEngine {
 
 
-    public GameEngine(TTTRobot playerO, TTTRobot playerX) {
-        super(playerO, playerX);
+    public GameEngine(TTTRobot robotO, TTTRobot robotX) {
+        super(robotO, robotX);
     }
 
     @Override
