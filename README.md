@@ -33,7 +33,7 @@ The aim of the `master` branch is to always contain a working copy of the progra
 ## Testing
 Unit Testing is useful since we can test our methods in an isolated fashion, automatically. This would be tested upon building the system and thus can also be done by the Continouous Integration tool [see Continuous Integration](#Continuous-Integration) to automate this and enforce the *working copy master branch* policy.
 
-As a result, it is best to have methods tested using Unit Testing. This shall be done using [JUnit](http://junit.org/). I shall add a test to my class so tha you can see what it looks like. The point is to have Travis run these tests to make sure that the methods work as we expect them to work.
+As a result, it is best to have methods tested using Unit Testing. This shall be done using [JUnit](http://junit.org/). I have added a simple test to my class so that you can see what it looks like. The point is to have Travis run these tests to make sure that the methods work as we expect them to work, and we would also be able to ensure that the `master` branch only has a working copy of the program.
 
 ## Continuous Integration 
 Continuous Integration allows us to automate certian stuff, such as checking whether the program is broken to even deploying the system. In our case, we would be using it to make sure that the program builds properly before merging the branch it lies on back to the `master` branch. That way, we can ensure that whatever is on the `master` branch would be compilable. It is also ideal to test programs and this can be automated using CI too.
