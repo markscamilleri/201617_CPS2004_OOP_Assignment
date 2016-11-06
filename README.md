@@ -1,5 +1,5 @@
 # CPS2004 Assignment [![Build Status](https://travis-ci.com/markscamilleri/201617_CPS2004_OOP_Assignment.svg?token=npXrSaqtXLCYdQdEQHQQ&branch=master)](https://travis-ci.com/markscamilleri/201617_CPS2004_OOP_Assignment)
-## Team Name: <To Be Determined>
+## Team Name: Programmers Semi-Sura
 
 ## Team Members
 Name                | Role    | GitHub Username
