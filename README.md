@@ -14,7 +14,7 @@ Firstly, to create the project on your chosen IDE, remember to use "Create proje
 Javadocs are there for a reason, they can produce very pretty documentation pages :smiley:
 
 ## Code Formatting
-One of the best ways to write clean code is by making sure that your code adhers to a specific format. Google has made available their own code style formatting avaialable for anyone to use (https://github.com/google/google-java-format). Apart from this, IntelliJ (and I believe also, Eclipse) have got this plugin called SonarLint which would alert you whenever your code does not adher to the style you choose. 
+One of the best ways to write clean code is by making sure that your code adheres to a specific format. Google has made available their own code style formatting avaialable for anyone to use (https://github.com/google/google-java-format). Apart from this, IntelliJ (and I believe also, Eclipse) have got this plugin called SonarLint which would alert you whenever your code does not adher to the style you choose. 
 
 ## Compilation
 As @jp-uom said in [his repository](https://github.com/jp-uom/201617_CPS2004_OOP_Assignment), compilation should be done by downloading the `jar` file and using the following command (edited to suit our needs):
