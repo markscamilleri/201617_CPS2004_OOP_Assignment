@@ -47,6 +47,6 @@ So to test the game engine, you would use:
     java -cp .:dist:dependencies/tttwar_v1.0.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar org.junit.runner.JUnitCore engine.GameEngineTest
 
 ## Continuous Integration 
-Continuous Integration allows us to automate certian stuff, such as checking whether the program is broken to even deploying the system. In our case, we would be using it to make sure that the program builds properly before merging the branch it lies on back to the `master` branch. That way, we can ensure that whatever is on the `master` branch would be compilable. It is also ideal to test programs and this can be automated using CI too.
+Continuous Integration allows us to automate certian stuff, such as checking whether the program is broken to even deploying the system. In our case, we would be using it to make sure that the program builds properly before merging the branch it lies on back to the `master` branch. That way, we can ensure that whatever is on the `master` branch would be compilable. The CI tool will also test our classes automatically with every push to this repository.
 
 CI results for this assignment can be seen here: https://travis-ci.com/markscamilleri/201617_CPS2004_OOP_Assignment
