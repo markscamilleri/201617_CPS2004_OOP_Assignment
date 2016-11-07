@@ -40,11 +40,11 @@ As a result, it is best to have methods tested using Unit Testing. This shall be
 
 While testing is done with every push and before merging to the `master` branch, if you want to run the unit tests on your PC, after compiling with the tests you need to run the following command:
 
-    java -cp .:dist:dependencies/tttwar_v1.0.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar org.junit.runner.JUnitCore {Test classes to run}
+    java -cp .:dist:dependencies/tttwar_v1.1.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar org.junit.runner.JUnitCore {Test classes to run}
 
 So to test the game engine, you would use:
 
-    java -cp .:dist:dependencies/tttwar_v1.0.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar org.junit.runner.JUnitCore engine.GameEngineTest
+    java -cp .:dist:dependencies/tttwar_v1.1.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar org.junit.runner.JUnitCore engine.GameEngineTest
 
 ## Continuous Integration 
 Continuous Integration allows us to automate certian stuff, such as checking whether the program is broken to even deploying the system. In our case, we would be using it to make sure that the program builds properly before merging the branch it lies on back to the `master` branch. That way, we can ensure that whatever is on the `master` branch would be compilable. The CI tool will also test our classes automatically with every push to this repository.
