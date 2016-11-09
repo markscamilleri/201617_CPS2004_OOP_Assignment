@@ -19,10 +19,10 @@ One of the best ways to write clean code is by making sure that your code adhere
 ## Compilation
 As @jp-uom said in [his repository](https://github.com/jp-uom/201617_CPS2004_OOP_Assignment), compilation should be done by downloading the `jar` file and using the following command (edited to suit our needs):
 
-    javac -d dist -cp dependencies/tttwar_v1.0.jar src/*/*.java
+    javac -d dist -cp dependencies/tttwar_v1.1.jar src/*/*.java
 If you wish to compile the program with the unit tests (this is done automatically online at every push, but I still recommend it as you can then test it on your local PC), you have to run the following command:
     
-    javac -d dist -cp dependencies/tttwar_v1.0.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar src/*/*.java test/*/*.java
+    javac -d dist -cp dependencies/tttwar_v1.1.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar src/*/*.java test/*/*.java
 
 So remember to configure your IDE accordingly if you're using an IDE.
 
