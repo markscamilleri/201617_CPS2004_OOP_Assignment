@@ -9,7 +9,7 @@ Miguel Dingli       | Player  | @Miguel206
 Ella Lautier        | Player  | @ellalautier
 
 ## Coding
-Firstly, to create the project on your chosen IDE, remember to use "Create project with existing sources". That way, you can select this repository to be where your sources are located. Source code will go in the `src` folder, whereas the compiled code will go in the `dist` folder. Code pertaining to unit tests should go to the `test` folder.
+Firstly, to create the project on your chosen IDE, remember to use "Create project from version control". That way, you can select this repository to be where your sources are located. Source code will go in the `src` folder, whereas the compiled code will go in the `dist` folder. Code pertaining to unit tests should go to the `test` folder.
 
 Javadocs are there for a reason, they can produce very pretty documentation pages :smiley:
 
@@ -27,7 +27,7 @@ If you wish to compile the program with the unit tests (this is done automatical
 So remember to configure your IDE accordingly if you're using an IDE.
 
 ## Git Branching
-The aim of the `master` branch is to always contain a working copy of the programme that is developed. As a result, whenever something is to be coded, it should be done by branching out from the `master` branch into your own branch, and then merging back to the `master` branch. To merge back, the code must be tested and it must work [see Testing](#Testing). Normally, pull requests are used for code reviews, that is when someone else reviews your code for you. This allows to have a second pair of eyes looking at your code to detect bugs. However, due to the nature of this assignment of having players' code secret, this will not happen that way. Instead, pull requests will just be used to wait for Travic CI to make sure that the code works.
+The aim of the `master` branch is to always contain a working copy of the programme that is developed. As a result, whenever something is to be coded, it should be done by branching out from the `master` branch into your own branch, and then merging back to the `master` branch. To merge back, the code must be tested and it must work [see Testing](#Testing). Normally, pull requests are used for code reviews, that is when someone else reviews your code for you. This allows to have a second pair of eyes looking at your code to detect bugs. However, due to the nature of this assignment of having players' code secret, this will not happen that way. Instead, pull requests will just be used to wait for Travis CI to make sure that the code works.
 
 ### Some useful links to git:
 - https://git-scm.com/ - Git Documentation
