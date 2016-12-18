@@ -4,7 +4,7 @@ jdk:
     - oraclejdk8
     
 install:
-    - javac -d dist -cp dependencies/tttwar_v1.1.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar src/*/*.java test/*/*.java
+    - javac -d dist -cp dependencies/tttwar_v1.1.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar:dist test/*/*.java
     
 script: 
     - java -cp .:dist:dependencies/tttwar_v1.1.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar org.junit.runner.JUnitCore engine.GameEngineTest

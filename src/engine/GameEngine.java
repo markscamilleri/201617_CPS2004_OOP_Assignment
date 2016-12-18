@@ -16,6 +16,8 @@ public class GameEngine extends TTTWarEngine {
 
     @Override
     public void play() {
+        while(!(this.board.isWinningPosition() || this.board.isFull())){
 
+        }
     }
 }
