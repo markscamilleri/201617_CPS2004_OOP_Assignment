@@ -1,5 +1,4 @@
-/src/player/*.java
-/src/engine/*.class
+/src/**/*.java
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
