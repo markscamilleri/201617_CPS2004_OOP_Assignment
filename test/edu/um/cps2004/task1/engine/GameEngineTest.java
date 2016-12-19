@@ -1,8 +1,6 @@
-package engine;
+package edu.um.cps2004.task1.engine;
 
 import edu.um.cps2004.task1.catalog.Mark;
-import edu.um.cps2004.task1.engine.GameBoard;
-import edu.um.cps2004.task1.engine.TTTWarEngine;
 import edu.um.cps2004.task1.robot.TTTRobot;
 import org.junit.Before;
 import org.junit.Test;
