@@ -43,7 +43,7 @@ public class GameEngineTest {
      * a test suite. This method is one specific test.
      */
     @Test
-    public void testGameBoardIsCreated(){
+    public void testGameBoardIsCreated() {
         assertNotNull("The Game has not been created", engine);
     }
 }
