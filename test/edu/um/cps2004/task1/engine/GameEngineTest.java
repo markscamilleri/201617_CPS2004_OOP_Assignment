@@ -117,7 +117,6 @@ public class GameEngineTest {
      * Checks whether a winner was output with 2 different players
      */
     @Test
-    @Ignore("TTTRobot ella is not working as it should be causing this test to fail")
     public void testGameEnginePlayWith2DifferentPlayers(){
         engine = new GameEngine(new ella(), new Miguel());
         engine.play();
