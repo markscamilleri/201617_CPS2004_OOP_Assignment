@@ -24,7 +24,7 @@ public class GameEngineTest {
 
 
     //A dummy implementation of TTTRobot
-    private class Robot implements TTTRobot{
+    private class Robot implements TTTRobot {
 
         @Override
         public String getRobotMasterName() {
@@ -46,7 +46,7 @@ public class GameEngineTest {
     private PrintStream stdout = new PrintStream(new FileOutputStream(FileDescriptor.out));
 
     @Before
-    public void initialize(){
+    public void initialize() {
         out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
     }
@@ -56,7 +56,7 @@ public class GameEngineTest {
      * a test suite. This method is one specific test.
      */
     @Test
-    public void testGameEngineCreated(){
+    public void testGameEngineCreated() {
         engine = new GameEngine(robotO, robotX);
         assertNotNull("The Game has not been created", engine);
     }
@@ -66,7 +66,7 @@ public class GameEngineTest {
      * when the first robot is null
      */
     @Test(expected = IllegalArgumentException.class)
-    public void testGameEngineFirstNull(){
+    public void testGameEngineFirstNull() {
         engine = new GameEngine(null, robotX);
     }
 
@@ -75,7 +75,7 @@ public class GameEngineTest {
      * when the second robot is null
      */
     @Test(expected = IllegalArgumentException.class)
-    public void testGameEngineSecondNull(){
+    public void testGameEngineSecondNull() {
         engine = new GameEngine(robotO, null);
     }
 
@@ -84,7 +84,7 @@ public class GameEngineTest {
      * when the both robots are null
      */
     @Test(expected = IllegalArgumentException.class)
-    public void testGameEngineBothNull(){
+    public void testGameEngineBothNull() {
         engine = new GameEngine(null, null);
     }
 
@@ -92,7 +92,7 @@ public class GameEngineTest {
      * Checks whether the robots are valid
      */
     @Test
-    public void testGameEngineCreatedWithActualRobots(){
+    public void testGameEngineCreatedWithActualRobots() {
         engine = new GameEngine(new ella(), new Miguel());
         assertNotNull("The Game has not been created with actual robots", engine);
     }
@@ -101,16 +101,15 @@ public class GameEngineTest {
      * Checks whether a winner was output with only 1 robot player
      */
     @Test
-    public void testGameEnginePlayWith1Players(){
+    public void testGameEnginePlayWith1Players() {
         engine = new GameEngine(new Miguel(), new Miguel());
         engine.play();
         String output = new String(out.toByteArray(), StandardCharsets.UTF_8);
         String[] outputs = output.split("\n");
 //        System.setOut(stdout);
 //        System.out.println(output);
-        assertTrue(outputs[outputs.length - 1].contains("Miguel"));
+        assertTrue(outputs[outputs.length - 1].contains("Miguel") || outputs[outputs.length - 1].contains("draw"));
     }
-
 
 
     /**
@@ -124,7 +123,7 @@ public class GameEngineTest {
         String[] outputs = output.split("\n");
 //        System.setOut(stdout);
 //        System.out.println(output);
-        assertTrue(outputs[outputs.length - 1].contains("Miguel") || outputs[outputs.length - 1].contains("Ella"));
+        assertTrue(outputs[outputs.length - 1].contains("Miguel") || outputs[outputs.length - 1].contains("Ella") || outputs[outputs.length - 1].contains("draw"));
     }
 
 }

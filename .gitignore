@@ -1,4 +1,5 @@
 /src/**/*.java
+/dist/**/main
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
