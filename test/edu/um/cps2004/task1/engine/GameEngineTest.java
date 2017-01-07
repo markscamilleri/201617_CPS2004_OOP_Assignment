@@ -1,11 +1,21 @@
 package edu.um.cps2004.task1.engine;
 
 import edu.um.cps2004.task1.catalog.Mark;
+import edu.um.cps2004.task1.robot.Miguel;
 import edu.um.cps2004.task1.robot.TTTRobot;
+import edu.um.cps2004.task1.robot.ella;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
+
 import static junit.framework.TestCase.assertNotNull;
+import static junit.framework.TestCase.assertTrue;
 
 /**
  * @author Mark Said Camilleri
@@ -15,7 +25,7 @@ public class GameEngineTest {
 
 
     //A dummy implementation of TTTRobot
-    class Robot implements TTTRobot{
+    private class Robot implements TTTRobot {
 
         @Override
         public String getRobotMasterName() {
@@ -28,14 +38,18 @@ public class GameEngineTest {
         }
     }
 
-    TTTWarEngine engine;
+    private TTTWarEngine engine;
 
-    TTTRobot robotO = new Robot();
-    TTTRobot robotX = new Robot();
+    private TTTRobot robotO = new Robot();
+    private TTTRobot robotX = new Robot();
+
+    private ByteArrayOutputStream out;
+    private PrintStream stdout = new PrintStream(new FileOutputStream(FileDescriptor.out));
 
     @Before
     public void initialize() {
-        engine = new GameEngine(robotO, robotX);
+        out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
     }
 
     /**
@@ -43,7 +57,75 @@ public class GameEngineTest {
      * a test suite. This method is one specific test.
      */
     @Test
-    public void testGameBoardIsCreated(){
+    public void testGameEngineCreated() {
+        engine = new GameEngine(robotO, robotX);
         assertNotNull("The Game has not been created", engine);
     }
+
+    /**
+     * Tests if the IllegalArgumentException is thrown
+     * when the first robot is null
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testGameEngineFirstNull() {
+        engine = new GameEngine(null, robotX);
+    }
+
+    /**
+     * Tests if the IllegalArgumentException is thrown
+     * when the second robot is null
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testGameEngineSecondNull() {
+        engine = new GameEngine(robotO, null);
+    }
+
+    /**
+     * Tests if the IllegalArgumentException is thrown
+     * when the both robots are null
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testGameEngineBothNull() {
+        engine = new GameEngine(null, null);
+    }
+
+    /**
+     * Checks whether the robots are valid
+     */
+    @Test
+    public void testGameEngineCreatedWithActualRobots() {
+        engine = new GameEngine(new ella(), new Miguel());
+        assertNotNull("The Game has not been created with actual robots", engine);
+    }
+
+    /**
+     * Checks whether a winner was output with only 1 robot player
+     */
+    @Test
+    public void testGameEnginePlayWith1Players() {
+        engine = new GameEngine(new Miguel(), new Miguel());
+        engine.play();
+        String output = new String(out.toByteArray(), StandardCharsets.UTF_8);
+        String[] outputs = output.split("\n");
+//        System.setOut(stdout);
+//        System.out.println(output);
+        assertTrue(outputs[outputs.length - 1].contains("Miguel") || outputs[outputs.length - 1].contains("draw"));
+    }
+
+
+    /**
+     * Checks whether a winner was output with 2 different players
+     */
+    @Test
+    @Ignore("TTTRobot ella is not working as it should be causing this test to fail")
+    public void testGameEnginePlayWith2DifferentPlayers(){
+        engine = new GameEngine(new ella(), new Miguel());
+        engine.play();
+        String output = new String(out.toByteArray(), StandardCharsets.UTF_8);
+        String[] outputs = output.split("\n");
+//        System.setOut(stdout);
+//        System.out.println(output);
+        assertTrue(outputs[outputs.length - 1].contains("Miguel") || outputs[outputs.length - 1].contains("Ella") || outputs[outputs.length - 1].contains("draw"));
+    }
+
 }
