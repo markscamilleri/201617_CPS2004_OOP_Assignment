@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 
@@ -41,6 +43,7 @@ public class GameEngineTest {
     private TTTRobot robotX = new Robot();
 
     private ByteArrayOutputStream out;
+    private PrintStream stdout = new PrintStream(new FileOutputStream(FileDescriptor.out));
 
     @Before
     public void initialize(){
@@ -100,9 +103,11 @@ public class GameEngineTest {
     @Test
     public void testGameEnginePlay(){
         engine = new GameEngine(new ella(), new Miguel());
+        engine.play();
         String output = new String(out.toByteArray(), StandardCharsets.UTF_8);
         String[] outputs = output.split("\n");
-
+//        System.setOut(stdout);
+//        System.out.println(output);
         assertTrue(outputs[outputs.length - 1].contains("Miguel") || outputs[outputs.length - 1].contains("Ella"));
     }
 
