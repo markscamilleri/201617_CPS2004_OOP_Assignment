@@ -98,10 +98,26 @@ public class GameEngineTest {
     }
 
     /**
-     * Checks whether a winner was output
+     * Checks whether a winner was output with only 1 robot player
      */
     @Test
-    public void testGameEnginePlay(){
+    public void testGameEnginePlayWith1Players(){
+        engine = new GameEngine(new Miguel(), new Miguel());
+        engine.play();
+        String output = new String(out.toByteArray(), StandardCharsets.UTF_8);
+        String[] outputs = output.split("\n");
+//        System.setOut(stdout);
+//        System.out.println(output);
+        assertTrue(outputs[outputs.length - 1].contains("Miguel"));
+    }
+
+
+
+    /**
+     * Checks whether a winner was output with 2 different players
+     */
+    @Test
+    public void testGameEnginePlayWith2DifferentPlayers(){
         engine = new GameEngine(new ella(), new Miguel());
         engine.play();
         String output = new String(out.toByteArray(), StandardCharsets.UTF_8);
