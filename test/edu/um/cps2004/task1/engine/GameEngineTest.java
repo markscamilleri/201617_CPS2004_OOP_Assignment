@@ -22,7 +22,7 @@ public class GameEngineTest {
 
 
     //A dummy implementation of TTTRobot
-    class Robot implements TTTRobot{
+    private class Robot implements TTTRobot{
 
         @Override
         public String getRobotMasterName() {
@@ -35,12 +35,12 @@ public class GameEngineTest {
         }
     }
 
-    TTTWarEngine engine;
+    private TTTWarEngine engine;
 
-    TTTRobot robotO = new Robot();
-    TTTRobot robotX = new Robot();
+    private TTTRobot robotO = new Robot();
+    private TTTRobot robotX = new Robot();
 
-    ByteArrayOutputStream out;
+    private ByteArrayOutputStream out;
 
     @Before
     public void initialize(){
@@ -103,7 +103,7 @@ public class GameEngineTest {
         String output = new String(out.toByteArray(), StandardCharsets.UTF_8);
         String[] outputs = output.split("\n");
 
-        assertTrue(outputs[outputs.length - 1].contains("Miguel") || outputs[outputs.length - 1].contains("Ella"))
+        assertTrue(outputs[outputs.length - 1].contains("Miguel") || outputs[outputs.length - 1].contains("Ella"));
     }
 
 }
