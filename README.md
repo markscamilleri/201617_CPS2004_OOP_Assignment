@@ -21,10 +21,10 @@ One of the best ways to write clean code is by making sure that your code adhere
 ## Compilation
 As @jp-uom said in [his repository](https://github.com/jp-uom/201617_CPS2004_OOP_Assignment), compilation should be done by downloading the `jar` file and using the following command (edited to suit our needs):
 
-    javac -d dist -cp dependencies/tttwar_v1.1.jar src/edu/um/cps2004/task1/*/*.java
+    javac -d dist -cp dependencies/tttwar_v1.2.jar src/edu/um/cps2004/task1/*/*.java
 If you wish to compile the program with the unit tests (this is done automatically online at every push, but I still recommend it as you can then test it on your local PC), you have to run the following command:
     
-    javac -d dist -cp dependencies/tttwar_v1.1.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar src/edu/um/cps2004/task1/*/*.java test/edu/um/cps2004/task1/*/*.java
+    javac -d dist -cp dependencies/tttwar_v1.2.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar src/edu/um/cps2004/task1/*/*.java test/edu/um/cps2004/task1/*/*.java
 
 So remember to configure your IDE accordingly if you're using an IDE. Also, since we are only committing `class` files, please remember to compile before committing.
 
@@ -42,11 +42,11 @@ As a result, it is best to have methods tested using Unit Testing. This shall be
 
 While testing is done with every push and before merging to the `master` branch, if you want to run the unit tests on your PC, after compiling with the tests you need to run the following command:
 
-    java -cp .:dist:dependencies/tttwar_v1.1.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar org.junit.runner.JUnitCore {Test classes to run}
+    java -cp .:dist:dependencies/tttwar_v1.2.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar org.junit.runner.JUnitCore {Test classes to run}
 
 So to test the game edu.um.cps2004.task1.engine, you would use:
 
-    java -cp .:dist:dependencies/tttwar_v1.1.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar org.junit.runner.JUnitCore edu.um.cps2004.task1.engine.GameEngineTest
+    java -cp .:dist:dependencies/tttwar_v1.2.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar org.junit.runner.JUnitCore edu.um.cps2004.task1.engine.GameEngineTest
     
 Remember that you'll have to compile the test classes too. [See Compilation](#Compilation)
 

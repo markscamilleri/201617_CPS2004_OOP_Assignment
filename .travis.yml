@@ -4,6 +4,6 @@ jdk:
     - oraclejdk8
     
 script: 
-    - java -cp .:dist:dependencies/tttwar_v1.1.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar org.junit.runner.JUnitCore edu.um.cps2004.task1.engine.GameEngineTest
+    - java -cp .:dist:dependencies/tttwar_v1.2.jar:dependencies/junit-4.12.jar:dependencies/hamcrest-core-1.3.jar org.junit.runner.JUnitCore edu.um.cps2004.task1.engine.GameEngineTest
 
 
