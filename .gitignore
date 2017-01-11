@@ -2,6 +2,8 @@ src/
 /dist/**/main
 test/
 
+*.sh
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
